@@ -4,8 +4,9 @@
 require 'sidekiq'
 
 Sidekiq.configure_client do |config|
+  provider = ENV.fetch('REDIS_PROVIDER','REDIS_URL')
   config.redis = {
-    url: ENV.fetch('REDIS_URL','redis://localhost:6379'),
+    url: ENV.fetch(provider,'redis://localhost:6379'),
     size: 1
   }
 end

@@ -22,8 +22,9 @@
       "description": "The login password. Please change this.",
       "generator": "secret"
     },
-    "REDIS_URL": {
-      "required": true
+    "REDIS_PROVIDER": {
+      "description": "Environment variable to use to look up Redis URL (something like HEROKU_REDIS_COPPER_URL if the Redis instance is from another app).",
+      "value": "REDIS_URL"
     }
   }
 }
